@@ -1,0 +1,57 @@
+This is the documents for using pre-calculated kernel by SVM_light (http://svmlight.joachims.org/).
+
+Please follow the following steps.
+
+1. The self-defined kernel "kernel.h" should be added for user to lookup the pre-calcualted similarity between drug combinations.
+
+2. The following function will be added into "svm_common.c" for user to read the pre-calcualted kernel. 
+
+int read_kernel(KERNEL_PARM *kernel_parm)
+{
+ int data_height,data_width;
+ int elemet = 0;
+ if( kernel_parm->kernel_type == 4 && strcmp(kernel_parm->custom, "empty") != 0 ) {
+     FILE *fp;
+    if((fp=fopen(kernel_parm->custom, "r")) == NULL) {
+        printf("cannot read file\n");
+        exit(0);
+    }
+        fscanf(fp,"%d %d",&data_height, &data_width);
+        printf("\n reading my own Kernel \n");
+        printf("kernel_height %d & kernel_width %d \n",data_height ,data_width);
+        //kernelM = new double*[data_height];
+        ///for(i = 0; i < data_height; i++)
+        //      kernelM[i] = new double[data_width];
+        kernelM = ( double **)malloc(data_height * sizeof( double *));
+        //kernelM = (double*) malloc( (data_height*data_width) * sizeof(double) );      
+        for (int i=0; i<data_height; i++)
+                kernelM[i] = ( double *)malloc(data_width * sizeof( double));
+
+        for(int i=0;i<data_height;i++){
+                for(int k=0;k<data_width;k++){
+                fscanf(fp,"%lf",&kernelM[i][k]);
+                elemet=elemet+1;
+          }
+        }
+
+        if(elemet != data_height*data_width){
+                printf("KernelM number of entries is not right\n");
+        exit(0);
+        }
+    fclose(fp);
+
+  }
+
+  return(data_height);
+
+}
+
+3. In "svm_learn_main.c," please declare a 2D matrix for storing the kernel by "double ** kernelM;."
+   Also, free the memory after the program finished.
+
+   for( i=0 ; i<data_height ; i++ )
+        free(kernelM[i]);
+   free(kernelM);
+
+4. The training and testing input are in directory "./testbench."
+   These inputs server as indexes to choose the similarities in the pre-calcualated kernel matrix. 
