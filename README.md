@@ -71,7 +71,10 @@ The following *.py return the similarities between drug combinations by differen
 The following instructions explain the usage of code: 
 
 ################################
+
 Kernel_GraphMatching.py:
+
+################################
 
 Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
 command:
@@ -86,7 +89,10 @@ parameters:
 - ./Output_path: (string) path to output locations
  
 ################################
+
 Kernel_DrugSimilarity.py:
+
+################################
 
 Convolutional kernels: calculate drug combination similarities from average pairwise single drug similarities.
 
@@ -101,7 +107,10 @@ parameters:
 - ./Output_path: (string) path to output locations
 
 ################################
+
 Kernel_CommonDrugs.py:
+
+################################
 
 Common drugs: calculate drug combination similarities from Tanimoto coefficients.
 
@@ -116,7 +125,10 @@ parameters:
 - ./Output_path: (string) path to output locations
 
 ################################
+
 SDS_CoMed.py:
+
+################################
 
 Common drugs: calculate single drug similarities from co-medication features.
 
