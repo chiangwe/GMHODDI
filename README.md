@@ -48,7 +48,7 @@ For usage of svm_learn and svm_classify, please visit the original author's webs
 
 # Input
 
-There three types of inputs.
+There three types of inputs:
 1). Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
 2). Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
 3). Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
