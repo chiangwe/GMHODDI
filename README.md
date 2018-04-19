@@ -148,6 +148,6 @@ parameters:
 Any kind of comments, suggestions, or bug reports are welcome and appreciated.
 Please feel free to contact the author: chiangwe AT iupui DOT edu.
 
-# Paper availability 
+# Paper Availability 
 
 The paper is accepted in ICIBM 2018 and will be published in a special issue at International Journal of Computational Biology and Drug Design.
