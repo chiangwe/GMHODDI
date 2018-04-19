@@ -70,6 +70,7 @@ The co-medication features used in the paper is also provided in the folder "/GM
 The following *.py return the similarities between drug combinations by different methods. 
 The following instructions explain the usage of code: 
 
+################################
 Kernel_GraphMatching.py:
 
 Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
@@ -83,33 +84,51 @@ parameters:
 - ./SDS_path: (string) path to file of single drug similarities 
 - ./DrugComb_path: (string) path to file of durg combinations
 - ./Output_path: (string) path to output locations
-        
+ 
+################################
 Kernel_DrugSimilarity.py:
+
 Convolutional kernels: calculate drug combination similarities from average pairwise single drug similarities.
+
 command:
+```
 python Kernel_DrugSimilarity.py ./SDS_path ./DrugComb_path ./Output_path
+```
+
 parameters:
-./SDS_path: (string) path to file of single drug similarities 
-./DrugComb_path: (string) path to file of durg combinations
-./Output_path: (string) path to output locations
-        
+- ./SDS_path: (string) path to file of single drug similarities 
+- ./DrugComb_path: (string) path to file of durg combinations
+- ./Output_path: (string) path to output locations
+
+################################
 Kernel_CommonDrugs.py:
+
 Common drugs: calculate drug combination similarities from Tanimoto coefficients.
+
 command:
+```
 python Kernel_CommonDrugs.py order ./DrugComb_path ./Output_path
+```
+
 parameters:
-./SDS_path: (string) path to file of single drug similarities 
-./DrugComb_path: (string) path to file of durg combinations
-./Output_path: (string) path to output locations
-        
+- ./SDS_path: (string) path to file of single drug similarities 
+- ./DrugComb_path: (string) path to file of durg combinations
+- ./Output_path: (string) path to output locations
+
+################################
 SDS_CoMed.py:
+
 Common drugs: calculate single drug similarities from co-medication features.
+
 command:
+```
 python SDS_CoMed.py ./CoMed_Feature_Plus_path ./CoMed_Feature_Minus_path ./Output_path
+```
+
 parameters:
-./CoMed_Feature_Plus_path: (string) path to file of co-medication features calculated from case events.
-./CoMed_Feature_Minus_path: (string) path to file of co-medication features calculated from control events.
-./Output_path: (string) path to output locations
+- ./CoMed_Feature_Plus_path: (string) path to file of co-medication features calculated from case events.
+- ./CoMed_Feature_Minus_path: (string) path to file of co-medication features calculated from control events.
+- ./Output_path: (string) path to output locations
 
 # Comments and Bug Reports
 
