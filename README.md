@@ -41,10 +41,10 @@ For usage of svm_learn and svm_classify, please visit the original author's webs
 
 # Code Information
 
-"Kernel_GraphMatching.py" is to calculate the similarity between drug combinations based on graph matching (K_gm). 
-"Kernel_DrugSimilarity.py" is a baseline method to calculate the similarity between drug combinations based on drug similarity (K_ds).
-"Kernel_CommonDrugs.py" is a baseline method to calculate the similarity between drug combinations based on common drugs (K_cd).
-"SDS_CoMed.py" is to calculate the single drug similarity base on co-medication information. 
+- "Kernel_GraphMatching.py" is to calculate the similarity between drug combinations based on graph matching (K_gm). 
+- "Kernel_DrugSimilarity.py" is a baseline method to calculate the similarity between drug combinations based on drug similarity (K_ds).
+- "Kernel_CommonDrugs.py" is a baseline method to calculate the similarity between drug combinations based on common drugs (K_cd).
+- "SDS_CoMed.py" is to calculate the single drug similarity base on co-medication information. 
 
 # Input
 
