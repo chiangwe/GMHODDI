@@ -49,9 +49,9 @@ For usage of svm_learn and svm_classify, please visit the original author's webs
 # Input
 
 There three types of inputs:
-  1). Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
-  2). Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
-  3). Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
+- 1). Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
+- 2). Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
+- 3). Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
 
 "Kernel_GraphMatching.py", "Kernel_DrugSimilarity.py" and "Kernel_CommonDrugs.py" take inputs of single drug similarity and drug combianation.
 "SDS_CoMed.py" takes the input of co-medication features.
