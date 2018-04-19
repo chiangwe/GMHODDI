@@ -30,31 +30,23 @@ You are also free to use other kernels. Instructions are also available at the o
 
 # Implementation 
 
-##########################
 Drug-Drug Interaction Prediction based on Co-Medication Patterns and Graph Matching
 Last modify: 04/18/2018
 Author: Wen-Hao Chiang
-##########################
 
-##########################
-General information
-##########################
 This code provides how to calculate the proposed kernels based on graph matching and other kernels for baseline methods.
 For probabilistic drug combination kernels, please visit the original author's website at https://sites.google.com/site/skevinzhou/codes.
 For usage of svm_learn and svm_classify, please visit the original author's website at http://svmlight.joachims.org.
 
-##########################
-Code Information
-##########################
+
+# Code Information
 
 "Kernel_GraphMatching.py" is to calculate the similarity between drug combinations based on graph matching (K_gm). 
 "Kernel_DrugSimilarity.py" is a baseline method to calculate the similarity between drug combinations based on drug similarity (K_ds).
 "Kernel_CommonDrugs.py" is a baseline method to calculate the similarity between drug combinations based on common drugs (K_cd).
 "SDS_CoMed.py" is to calculate the single drug similarity base on co-medication information. 
 
-##########################
-Input
-##########################
+# Input
 
 There three types of inputs.
 1). Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
@@ -64,9 +56,7 @@ There three types of inputs.
 "Kernel_GraphMatching.py", "Kernel_DrugSimilarity.py" and "Kernel_CommonDrugs.py" take inputs of single drug similarity and drug combianation.
 "SDS_CoMed.py" takes the input of co-medication features.
 
-##########################
-Usage
-##########################
+# Usage
 
 Please download all files in the code directory, including all *.py files, two executables (svm_learn and svm_classify) and kernel.h.
 For the executables, we have provided a pre-compiled version with Tanimoto kernel. 
@@ -80,49 +70,46 @@ The co-medication features used in the paper is also provided in the folder "/GM
 The following *.py return the similarities between drug combinations by different methods. 
 The following instructions explain the usage of code: 
 Kernel_GraphMatching.py:
-  Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
-  command:
-    python Kernel_GraphMatching.py ./SDS_path ./DrugComb_path ./Output_path
-  parameters:
-    ./SDS_path: (string) path to file of single drug similarities 
-    ./DrugComb_path: (string) path to file of durg combinations
-    ./Output_path: (string) path to output locations
+Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
+command:
+python Kernel_GraphMatching.py ./SDS_path ./DrugComb_path ./Output_path
+parameters:
+./SDS_path: (string) path to file of single drug similarities 
+./DrugComb_path: (string) path to file of durg combinations
+./Output_path: (string) path to output locations
         
-  - Kernel_DrugSimilarity.py:
-        - Convolutional kernels: calculate drug combination similarities from average pairwise single drug similarities.
-            - command:
-                python Kernel_DrugSimilarity.py ./SDS_path ./DrugComb_path ./Output_path
-            - parameters:
-                - ./SDS_path: (string) path to file of single drug similarities 
-                - ./DrugComb_path: (string) path to file of durg combinations
-        - ./Output_path: (string) path to output locations
+Kernel_DrugSimilarity.py:
+Convolutional kernels: calculate drug combination similarities from average pairwise single drug similarities.
+command:
+python Kernel_DrugSimilarity.py ./SDS_path ./DrugComb_path ./Output_path
+parameters:
+./SDS_path: (string) path to file of single drug similarities 
+./DrugComb_path: (string) path to file of durg combinations
+./Output_path: (string) path to output locations
         
-   - Kernel_CommonDrugs.py:
-        - Common drugs: calculate drug combination similarities from Tanimoto coefficients.
-              - command:
-                python Kernel_CommonDrugs.py order ./DrugComb_path ./Output_path
-              - parameters:
-                - ./SDS_path: (string) path to file of single drug similarities 
-                - ./DrugComb_path: (string) path to file of durg combinations
-              - ./Output_path: (string) path to output locations
+Kernel_CommonDrugs.py:
+Common drugs: calculate drug combination similarities from Tanimoto coefficients.
+command:
+python Kernel_CommonDrugs.py order ./DrugComb_path ./Output_path
+parameters:
+./SDS_path: (string) path to file of single drug similarities 
+./DrugComb_path: (string) path to file of durg combinations
+./Output_path: (string) path to output locations
         
-   - SDS_CoMed.py:
-        - Common drugs: calculate single drug similarities from co-medication features.
-              - command:
-                python SDS_CoMed.py ./CoMed_Feature_Plus_path ./CoMed_Feature_Minus_path ./Output_path
-              - parameters:
-                - ./CoMed_Feature_Plus_path: (string) path to file of co-medication features calculated from case events.
-                - ./CoMed_Feature_Minus_path: (string) path to file of co-medication features calculated from control events.
-              - ./Output_path: (string) path to output locations
-    
+SDS_CoMed.py:
+Common drugs: calculate single drug similarities from co-medication features.
+command:
+python SDS_CoMed.py ./CoMed_Feature_Plus_path ./CoMed_Feature_Minus_path ./Output_path
+parameters:
+./CoMed_Feature_Plus_path: (string) path to file of co-medication features calculated from case events.
+./CoMed_Feature_Minus_path: (string) path to file of co-medication features calculated from control events.
+./Output_path: (string) path to output locations
 
-##########################
-Comments and Bug Reports
-##########################
+# Comments and Bug Reports
 
 Any kind of comments, suggestions, or bug reports are welcome and appreciated.
 Please feel free to contact the author: chiangwe AT iupui DOT edu.
 
-
 # Paper availability 
+
 The paper is accepted in ICIBM 2018 and will be published in a special issue at International Journal of Computational Biology and Drug Design.
