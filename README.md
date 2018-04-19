@@ -49,9 +49,9 @@ For usage of svm_learn and svm_classify, please visit the original author's webs
 # Input
 
 There three types of inputs:
-- 1). Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
-- 2). Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
-- 3). Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
+- Single drug similarity: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
+- Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
+- Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
 
 "Kernel_GraphMatching.py", "Kernel_DrugSimilarity.py" and "Kernel_CommonDrugs.py" take inputs of single drug similarity and drug combianation.
 "SDS_CoMed.py" takes the input of co-medication features.
@@ -69,14 +69,20 @@ The co-medication features used in the paper is also provided in the folder "/GM
 
 The following *.py return the similarities between drug combinations by different methods. 
 The following instructions explain the usage of code: 
+
 Kernel_GraphMatching.py:
+
 Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
 command:
+
+```
 python Kernel_GraphMatching.py ./SDS_path ./DrugComb_path ./Output_path
+```
+
 parameters:
-./SDS_path: (string) path to file of single drug similarities 
-./DrugComb_path: (string) path to file of durg combinations
-./Output_path: (string) path to output locations
+- ./SDS_path: (string) path to file of single drug similarities 
+- ./DrugComb_path: (string) path to file of durg combinations
+- ./Output_path: (string) path to output locations
         
 Kernel_DrugSimilarity.py:
 Convolutional kernels: calculate drug combination similarities from average pairwise single drug similarities.
