@@ -5,12 +5,13 @@ Paper is accepted in ICIBM 2018.
 Datasets used for this project are from FDA Adverse Event Reporting System. 
 (FAERS https://www.fda.gov/Drugs/GuidanceComplianceRegulatoryInformation/Surveillance/AdverseDrugEffects/ucm082193.htm)
 Final drug combinations after our data preparation protocols are available in the folder "Dataset."
-In all the dataset, each row represents a drug combination and each number in a given row represents the ID of the drug that the combination contains. The mapping of drug IDs and drug names can be found in "GMHODDI/Dataset/FAERS_Dataset/drug_maps.txt."  
+In all the datasets, each row represents a drug combination and each number in each row represents the ID of the drug that the combination contains. 
+The mapping of drug IDs and drug names can be found in the folder "GMHODDI/Dataset/FAERS_Dataset/drug_maps.txt."  
 
-Dataset descriptions as follows:
-  1. "GMHODDI/Dataset/FAERS_Dataset/" contains the extracted adverse events including those that are reported to have myopathy (myopathy_ho_events.txt) and those that are not (nonmyopathy_ho_events.txt).
+Dataset descriptions are as follows:
+  1. "GMHODDI/Dataset/FAERS_Dataset/" contains the extracted adverse events including those that are reported to have myopathy (i.e., myopathy_ho_events.txt) and those that are not (i.e., nonmyopathy_ho_events.txt).
   2. "GMHODDI/Dataset/D_FAERS/" contains the extracted drug combinations, where the label can be found in "DFaers_label.csr."
-  3. "GMHODDI/Dataset/D_star/" contains the drug combinations after being selected by our training data preparation protocols for model training and cross-validation.
+  3. "GMHODDI/Dataset/D_star/" contains the drug combinations that are selected by our training data preparation protocols for model training and cross-validation.
   4. "GMHODDI/Dataset/D_star/CoMed_Feature/" contains the features used to calculate the single drug similarities based on co-medications. Note that there are five set of features corresponding to five cross-validation. 
   5. "GMHODDI/Dataset/D_star/Tesing/" and "GMHODDI/Dataset/D_star/Training/" contain the split drug combination for five cross-validation.
   
@@ -36,13 +37,13 @@ Author: Wen-Hao Chiang
 
 This code provides how to calculate the proposed kernels based on graph matching and other kernels for baseline methods.
 For probabilistic drug combination kernels, please visit the original author's website at https://sites.google.com/site/skevinzhou/codes.
-For usage of svm_learn and svm_classify, please visit the original author's website at http://svmlight.joachims.org.
+For the usage of svm_learn and svm_classify, please visit the original author's website at http://svmlight.joachims.org.
 
 
 # Code Information
 
 - "Kernel_GraphMatching.py" is to calculate the similarity between drug combinations based on graph matching (K_gm). 
-- "Kernel_DrugSimilarity.py" is a baseline method to calculate the similarity between drug combinations based on drug similarity (K_ds).
+- "Kernel_DrugSimilarity.py" is a baseline method to calculate the similarity between drug combinations based on drug similarities (K_ds).
 - "Kernel_CommonDrugs.py" is a baseline method to calculate the similarity between drug combinations based on common drugs (K_cd).
 - "SDS_CoMed.py" is to calculate the single drug similarity base on co-medication information. 
 
@@ -53,7 +54,7 @@ There three types of inputs:
 - Drug combination: it is provided as a CSR format. Each line is a drug combination and each number in a line corresponds to drugs that the combination contains.
 - Co-medication features: it is provided as a dense matrix. Each line is a row in the matrix and each number in a line corresponds to each column in the matrix.
 
-"Kernel_GraphMatching.py", "Kernel_DrugSimilarity.py" and "Kernel_CommonDrugs.py" take inputs of single drug similarity and drug combianation.
+"Kernel_GraphMatching.py", "Kernel_DrugSimilarity.py" and "Kernel_CommonDrugs.py" take inputs of single drug similarities and drug combianations.
 "SDS_CoMed.py" takes the input of co-medication features.
 
 # Usage
@@ -62,12 +63,12 @@ Please download all files in the code directory, including all *.py files, two e
 For the executables, we have provided a pre-compiled version with Tanimoto kernel. 
 You are free to compile with your preferred kernel from the original author's website at http://svmlight.joachims.org.
 
-The kernels used in the paper is provided in the following link due to the space limits of Github. 
-https://cs.iupui.edu/~chiangwe/GMHODDI/Kernel/
-The single drug similarities used in the paper is also provided in the folder "/GMHODDI."
-The co-medication features used in the paper is also provided in the folder "/GMHODDI/Dataset/D_star/CoMed_Feature/."
+The kernels used in the paper are provided in the following link due to the space limits of Github. 
+( https://cs.iupui.edu/~chiangwe/GMHODDI/Kernel/ )
+The single drug similarities used in the paper are also provided in the folder "/GMHODDI."
+The co-medication features used in the paper are also provided in the folder "/GMHODDI/Dataset/D_star/CoMed_Feature/."
 
-The following *.py return the similarities between drug combinations by different methods. 
+The following *.py returns the similarities between drug combinations by different methods. 
 The following instructions explain the usage of code: 
 
 ################################
@@ -76,7 +77,7 @@ Kernel_GraphMatching.py:
 
 ################################
 
-Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
+Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarities.
 command:
 
 ```
