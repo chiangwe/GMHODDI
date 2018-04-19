@@ -79,9 +79,9 @@ The co-medication features used in the paper is also provided in the folder "/GM
 
 The following *.py return the similarities between drug combinations by different methods. 
 The following instructions explain the usage of code: 
-    - Kernel_GraphMatching.py:
-        - Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
-            - command:
+- Kernel_GraphMatching.py:
+- Graph matching similarity: calculate drug combination similarities by graph matching and given single drug similarity.
+ - command:
                 python Kernel_GraphMatching.py ./SDS_path ./DrugComb_path ./Output_path
             - parameters:
                 - ./SDS_path: (string) path to file of single drug similarities 
