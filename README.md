@@ -146,7 +146,8 @@ parameters:
 # Comments and Bug Reports
 
 Any kind of comments, suggestions, or bug reports are welcome and appreciated.
-Please feel free to contact the author: <!--- xxxxxxxx AT iupui DOT edu.  ---> 
+Please feel free to contact the author: 
+<!--- xxxxxxxx AT iupui DOT edu.  ---> 
 
 # Paper Availability 
 
