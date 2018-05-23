@@ -64,7 +64,7 @@ For the executables, we have provided a pre-compiled version with Tanimoto kerne
 You are free to compile with your preferred kernel from the original author's website at http://svmlight.joachims.org.
 
 The kernels used in the paper are provided in the following link due to the space limits of Github. 
-#( https://cs.iupui.edu/~chiangwe/GMHODDI/Kernel/ )
+<!--- ( https://cs.iupui.edu/~chiangwe/GMHODDI/Kernel/ )  ---> 
 The single drug similarities used in the paper are also provided in the folder "/GMHODDI."
 The co-medication features used in the paper are also provided in the folder "/GMHODDI/Dataset/D_star/CoMed_Feature/."
 
@@ -146,7 +146,7 @@ parameters:
 # Comments and Bug Reports
 
 Any kind of comments, suggestions, or bug reports are welcome and appreciated.
-Please feel free to contact the author: xxxxxxxx AT iupui DOT edu.
+Please feel free to contact the author: <!--- xxxxxxxx AT iupui DOT edu.  ---> 
 
 # Paper Availability 
 
