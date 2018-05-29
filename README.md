@@ -33,7 +33,7 @@ You are also free to use other kernels. Instructions are also available at the o
 
 Drug-Drug Interaction Prediction based on Co-Medication Patterns and Graph Matching
 Last modify: 04/18/2018
-Author: Wen-Hao Chiang
+
 
 This code provides how to calculate the proposed kernels based on graph matching and other kernels for baseline methods.
 For probabilistic drug combination kernels, please visit the original author's website at https://sites.google.com/site/skevinzhou/codes.
